@@ -1,0 +1,62 @@
+.btn {
+  width: 65%;
+  max-width: 500px;
+  position: relative;
+  
+}
+
+.btn-plus{
+  width: 64px;
+  height: 64px;
+  background-color: #61dafb;
+  cursor: pointer;
+  border: none;
+  color: black;
+  text-shadow: 0 0 0.5em #61dafb;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+  bottom: -45px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.btn-plus:hover {
+  text-shadow: 0 0 0.2em black;
+  transform: scale(1.15); transition: all 0.5s;
+  color: #61dafb;
+}
+
+
+
+.btn-plus::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg, 
+    red, blue, deeppink, blue,
+      red, blue, deeppink, blue
+  );
+  background-size: 800%;
+  border-radius: 10%;
+  filter: blur(20px);
+  animation: rodeando 20s linear infinite;
+}
+
+@keyframes rodeando {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
